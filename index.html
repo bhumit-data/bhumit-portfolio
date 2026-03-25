@@ -3,154 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <title>Bhumit's Portfolio</title>
     <style>
-        :root {
-            --main-color: #4CAF50;
-            --secondary-color: #333;
-            --background-color: #f0f0f0;
-            --text-color: white;
-            --navbar-height: 60px;
-            --hero-height: 100vh;
-            --footer-height: 100px;
-        }
-
         body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--background-color);
+            padding: 0;
+            background: linear-gradient(180deg, navy, cyan);
         }
-
-        header {
+        nav {
             position: fixed;
-            top: 0;
             width: 100%;
-            height: var(--navbar-height);
-            background-color: var(--main-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            z-index: 1000;
+            top: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-
-        .navbar-link {
-            color: var(--text-color);
+        nav a {
+            color: white;
+            margin: 0 15px;
             text-decoration: none;
-            padding: 15px;
+            font-weight: 600;
         }
-
         .hero {
-            height: var(--hero-height);
-            background: linear-gradient(to right, #4CAF50, #2E7D32);
+            height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            animation: fadeUp 1s;
+            justify-content: center;
+            text-align: center;
         }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hero h1 {
+            color: transparent;
+            background: linear-gradient(90deg, #ff0080, #7928ca);
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-size: 4rem;
+            animation: fadeIn 3s;
         }
-
-        .about, .skills, .projects, .experience, .certifications, .education, .contact {
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section {
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
             padding: 20px;
-            margin-top: var(--navbar-height);
+            margin: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
         }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+        .card:hover {
+            transform: translateY(-5px);
         }
-
         footer {
-            background: var(--secondary-color);
-            color: var(--text-color);
-            height: var(--footer-height);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-            }
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('header .navbar-link');
-            window.addEventListener('scroll', function() {
-                let scrollPos = window.scrollY;
-                navLinks.forEach(link => {
-                    let section = document.querySelector(link.getAttribute('href'));
-                    if (section.offsetTop <= scrollPos && ((section.offsetTop + section.offsetHeight) > scrollPos)) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
-    <header>
-        <a href="#about" class="navbar-link">About</a>
-        <a href="#skills" class="navbar-link">Skills</a>
-        <a href="#projects" class="navbar-link">Projects</a>
-        <a href="#experience" class="navbar-link">Experience</a>
-        <a href="#certifications" class="navbar-link">Certifications</a>
-        <a href="#education" class="navbar-link">Education</a>
-        <a href="#contact" class="navbar-link">Contact</a>
-    </header>
-    <section class="hero">
-        <h1 style="color: white;">Welcome to My Portfolio</h1>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="hero" id="hero">
+        <h1>Welcome to My Portfolio</h1>
     </section>
-    <section class="about" id="about">
-        <h2>About Me</h2>
-        <p>This is a short paragraph about me.</p>
-        <img src="placeholder.jpg" alt="About image" style="width: 100%; height: auto;"/>
-    </section>
-    <section class="skills" id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="card">Skill 1</div>
-            <div class="card">Skill 2</div>
-            <div class="card">Skill 3</div>
-            <div class="card">Skill 4</div>
+    <section class="section" id="about">
+        <div class="card">
+            <h2>About Me</h2>
+            <p>Insert about me content here...</p>
         </div>
     </section>
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <p>Details of my projects will appear here.</p>
+    <section class="section" id="skills">
+        <div class="card">
+            <h2>My Skills</h2>
+            <p>List your skills here...</p>
+        </div>
     </section>
-    <section class="experience" id="experience">
-        <h2>Work Experience</h2>
-        <p>Details of my work experience will appear here.</p>
+    <section class="section" id="projects">
+        <div class="card">
+            <h2>Projects</h2>
+            <p>Showcase your projects here...</p>
+        </div>
     </section>
-    <section class="certifications" id="certifications">
-        <h2>Certifications</h2>
-        <p>Details of my certifications will appear here.</p>
+    <section class="section" id="experience">
+        <div class="card">
+            <h2>Experience</h2>
+            <p>Detail your experience here...</p>
+        </div>
     </section>
-    <section class="education" id="education">
-        <h2>Education</h2>
-        <p>Details of my education will appear here.</p>
+    <section class="section" id="certifications">
+        <div class="card">
+            <h2>Certifications</h2>
+            <p>List certifications here...</p>
+        </div>
     </section>
-    <section class="contact" id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <section class="section" id="education">
+        <div class="card">
+            <h2>Education</h2>
+            <p>Detail your education here...</p>
+        </div>
+    </section>
+    <section class="section" id="contact">
+        <div class="card">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </section>
     <footer>
-        <p>&copy; 2026 Bhumit. All Rights Reserved.</p>
+        <p>&copy; 2026 Bhumit. All rights reserved.</p>
     </footer>
 </body>
 </html>
