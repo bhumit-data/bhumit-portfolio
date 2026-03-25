@@ -1,1 +1,156 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Professional Portfolio</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <script src=\"script.js\" defer></script>\n</head>\n<body>\n    <header>\n        <h1>Hero Section</h1>\n        <p>Welcome to my professional portfolio.</p>\n    </header>\n    <section id=\"about\">\n        <h2>About Me</h2>\n        <p>Description about myself...</p>\n    </section>\n    <section id=\"skills\">\n        <h2>Skills</h2>\n        <ul>\n            <li>JavaScript</li>\n            <li>HTML</li>\n            <li>CSS</li>\n            <li>React</li>\n        </ul>\n    </section>\n    <section id=\"projects\">\n        <h2>Projects</h2>\n        <p>List of my projects...</p>\n    </section>\n    <section id=\"experience\">\n        <h2>Experience</h2>\n        <p>My work experience...</p>\n    </section>\n    <section id=\"certifications\">\n        <h2>Certifications</h2>\n        <p>My certifications...</p>\n    </section>\n    <section id=\"education\">\n        <h2>Education</h2>\n        <p>My educational background...</p>\n    </section>\n    <section id=\"contact\">\n        <h2>Contact</h2>\n        <p>How to contact me...</p>\n    </section>\n    <footer>\n        <p>&copy; 2026 Bhumit Data</p>\n    </footer>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhumit's Portfolio</title>
+    <style>
+        :root {
+            --main-color: #4CAF50;
+            --secondary-color: #333;
+            --background-color: #f0f0f0;
+            --text-color: white;
+            --navbar-height: 60px;
+            --hero-height: 100vh;
+            --footer-height: 100px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--navbar-height);
+            background-color: var(--main-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .navbar-link {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 15px;
+        }
+
+        .hero {
+            height: var(--hero-height);
+            background: linear-gradient(to right, #4CAF50, #2E7D32);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeUp 1s;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .about, .skills, .projects, .experience, .certifications, .education, .contact {
+            padding: 20px;
+            margin-top: var(--navbar-height);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: var(--text-color);
+            height: var(--footer-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('header .navbar-link');
+            window.addEventListener('scroll', function() {
+                let scrollPos = window.scrollY;
+                navLinks.forEach(link => {
+                    let section = document.querySelector(link.getAttribute('href'));
+                    if (section.offsetTop <= scrollPos && ((section.offsetTop + section.offsetHeight) > scrollPos)) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="#about" class="navbar-link">About</a>
+        <a href="#skills" class="navbar-link">Skills</a>
+        <a href="#projects" class="navbar-link">Projects</a>
+        <a href="#experience" class="navbar-link">Experience</a>
+        <a href="#certifications" class="navbar-link">Certifications</a>
+        <a href="#education" class="navbar-link">Education</a>
+        <a href="#contact" class="navbar-link">Contact</a>
+    </header>
+    <section class="hero">
+        <h1 style="color: white;">Welcome to My Portfolio</h1>
+    </section>
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>This is a short paragraph about me.</p>
+        <img src="placeholder.jpg" alt="About image" style="width: 100%; height: auto;"/>
+    </section>
+    <section class="skills" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="card">Skill 1</div>
+            <div class="card">Skill 2</div>
+            <div class="card">Skill 3</div>
+            <div class="card">Skill 4</div>
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <p>Details of my projects will appear here.</p>
+    </section>
+    <section class="experience" id="experience">
+        <h2>Work Experience</h2>
+        <p>Details of my work experience will appear here.</p>
+    </section>
+    <section class="certifications" id="certifications">
+        <h2>Certifications</h2>
+        <p>Details of my certifications will appear here.</p>
+    </section>
+    <section class="education" id="education">
+        <h2>Education</h2>
+        <p>Details of my education will appear here.</p>
+    </section>
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2026 Bhumit. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
