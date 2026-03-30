@@ -3,174 +3,154 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Bhumit Bhanushali — Data Analyst & Gen AI Specialist</title>
+    <title>Bhumit Bhanushali — Data Analyst Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <style>
         :root {
-            --navy: #0d1b2a;
-            --navy2: #1b2e45;
-            --blue: #1a56db;
-            --blue2: #2563eb;
-            --accent: #f0a500;
-            --light: #e8eef6;
-            --muted: #64748b;
+            --navy: #0a192f;
+            --navy-light: #112240;
+            --blue: #2563eb;
+            --accent: #f59e0b;
             --white: #ffffff;
-            --border: #dde4ef;
-            --text: #1e293b;
+            --text-main: #e6f1ff;
+            --text-muted: #8892b0;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; background: #f4f7fb; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        /* NAVBAR */
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13, 27, 42, 0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; }
-        .nav-logo { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.3rem; font-weight: 700; text-decoration: none; }
-        .nav-logo span { color: var(--accent); }
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(10, 25, 47, 0.85); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 70px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); text-decoration: none; }
+        .logo span { color: var(--accent); }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; transition: 0.3s; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* HERO */
-        #hero { min-height: 100vh; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 5% 60px; position: relative; }
-        .hero-content { position: relative; z-index: 2; max-width: 900px; }
-        .hero-tag { display: inline-block; background: rgba(240,165,0,0.1); border: 1px solid var(--accent); color: var(--accent); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 1.5rem; }
+        /* Hero Section */
+        #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 5% 0; }
+        .hero-content { max-width: 900px; }
+        .hero-tag { color: var(--accent); font-family: monospace; font-size: 1rem; margin-bottom: 1rem; display: block; }
         .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero-name span { color: var(--accent); }
-        .hero-sub { font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; }
-        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; }
-        .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); font-weight: 700; }
-        .stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+        .hero-sub { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; }
+        .btn { display: inline-block; padding: 14px 30px; border-radius: 4px; font-weight: 600; text-decoration: none; transition: 0.3s; border: 1px solid var(--accent); color: var(--accent); }
+        .btn:hover { background: rgba(245, 158, 11, 0.1); transform: translateY(-3px); }
 
-        /* SECTIONS */
-        section { padding: 100px 5%; }
-        .section-inner { max-width: 1100px; margin: 0 auto; }
-        .section-label { color: var(--blue2); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.2em; margin-bottom: 0.5rem; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--navy); margin-bottom: 3rem; }
+        /* General Sections */
+        section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--white); margin-bottom: 3rem; display: flex; align-items: center; }
+        .section-title::after { content: ""; display: block; width: 200px; height: 1px; background: var(--navy-light); margin-left: 20px; }
 
-        /* CARDS */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        /* Project Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background: var(--navy-light); padding: 2rem; border-radius: 8px; border: 1px solid transparent; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .card h3 { color: var(--white); margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .tech-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; font-family: monospace; font-size: 0.8rem; color: var(--accent); }
 
-        /* PROJECTS */
-        .project-header { background: var(--navy); padding: 2rem; color: var(--white); border-radius: 12px 12px 0 0; margin: -2rem -2rem 1.5rem; }
-        .tool-tag { font-size: 0.65rem; background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; color: var(--accent); margin-right: 5px; }
+        /* Contact Form */
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        input, textarea { width: 100%; background: #112240; border: 1px solid #233554; padding: 15px; color: white; border-radius: 4px; font-family: inherit; outline: none; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: var(--accent); }
+        .submit-btn { width: 100%; padding: 15px; background: transparent; border: 1px solid var(--accent); color: var(--accent); font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 4px; transition: 0.3s; }
+        .submit-btn:hover { background: rgba(245, 158, 11, 0.1); }
 
-        /* CONTACT */
-        #contact { background: var(--navy); color: var(--white); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-        .contact-form input, .contact-form textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 15px; color: white; border-radius: 6px; outline: none; }
-        .btn-send { background: var(--accent); color: var(--navy); font-weight: 700; padding: 14px; border-radius: 6px; border: none; cursor: pointer; text-transform: uppercase; }
-
-        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .contact-container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#hero" class="nav-logo">Bhumit<span>.</span></a>
+        <a href="#hero" class="logo">Bhumit<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#projects">Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section id="hero">
         <div class="hero-content">
-            <div class="hero-tag">Data Analyst & Gen AI Specialist</div>
-            <h1 class="hero-name">Bhumit<br><span>Bhanushali</span></h1>
-            <p class="hero-sub">Transforming data into intelligent business decisions with Python, SQL, and AI.</p>
-            <div class="hero-stats">
-                <div class="stat"><div class="stat-num">2</div><div class="stat-label">Projects</div></div>
-                <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Tools</div></div>
-                <div class="stat"><div class="stat-num">3</div><div class="stat-label">Certs</div></div>
-            </div>
+            <span class="hero-tag">Hi, my name is</span>
+            <h1 class="hero-name">Bhumit Bhanushali<span>.</span></h1>
+            <p class="hero-sub">I am a Data Analyst & Gen AI Specialist dedicated to turning raw data into high-impact visual stories and intelligent solutions.</p>
+            <a href="#projects" class="btn">View My Portfolio</a>
         </div>
     </section>
 
     <section id="about">
-        <div class="section-inner">
-            <p class="section-label">Profile</p>
-            <h2 class="section-title">Data Professional with an AI Edge</h2>
-            <p style="max-width: 800px; font-size: 1.1rem; color: var(--muted);">
-                I focus on turning "noisy" data into high-fidelity dashboards. Beyond traditional analytics, I specialize in <strong>Generative AI integration</strong>, using modern AI tools to automate workflows and enhance reporting.
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 800px;">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Based in Mumbai, I bridge the gap between traditional analytics and Generative AI. Whether it's cleaning "noisy" data or building AI-driven workflows, I focus on accuracy and automation.
             </p>
+            <ul class="tech-list" style="font-size: 1rem;">
+                <li>▹ Python</li>
+                <li>▹ SQL</li>
+                <li>▹ Power BI</li>
+                <li>▹ Tableau</li>
+                <li>▹ Generative AI</li>
+                <li>▹ Excel</li>
+            </ul>
         </div>
     </section>
 
     <section id="projects">
-        <div class="section-inner">
-            <p class="section-label">Portfolio</p>
-            <h2 class="section-title">Featured Work</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="project-header">
-                        <div style="margin-bottom: 10px;">
-                            <span class="tool-tag">Python</span><span class="tool-tag">SQL</span><span class="tool-tag">Power BI</span>
-                        </div>
-                        <h3>Customer Analytics</h3>
-                    </div>
-                    <ul style="list-style: none; color: var(--muted); font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;">→ Analyzed churn patterns and revenue trends.</li>
-                        <li style="margin-bottom: 10px;">→ Cleaned data for 99.9% reliability.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="project-header">
-                        <div style="margin-bottom: 10px;">
-                            <span class="tool-tag">Power BI</span><span class="tool-tag">Analytics</span>
-                        </div>
-                        <h3>Engagement Analysis</h3>
-                    </div>
-                    <ul style="list-style: none; color: var(--muted); font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;">→ Tracked 14M Total Reach and 20M Impressions.</li>
-                        <li style="margin-bottom: 10px;">→ Monitored 12.0% Engagement Rate across platforms.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <div class="section-inner">
-            <p class="section-label">Experience</p>
-            <h2 class="section-title">Work History</h2>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid">
             <div class="card">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                    <h3 style="color: var(--navy);">Data Analyst Intern</h3>
-                    <span style="color: var(--blue2); font-weight: 600;">2025 - 2026</span>
-                </div>
-                <p style="color: var(--blue2); margin-bottom: 1rem;">Adbizit</p>
-                <p style="color: var(--muted);">Developed dashboards and performed EDA to surface actionable business trends.</p>
+                <h3>Customer Churn Dashboard</h3>
+                <p>Advanced Power BI analysis tracking revenue trends and retention strategies with 99.9% data reliability.</p>
+                <ul class="tech-list">
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Power BI</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Social Engagement Analysis</h3>
+                <p>Visualized 14M Total Reach and 20M Impressions, achieving a 12.0% Engagement Rate across multiple platforms.</p>
+                <ul class="tech-list">
+                    <li>Power BI</li>
+                    <li>DAX</li>
+                    <li>Social API</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="section-inner">
-            <div class="contact-grid">
-                <div>
-                    <h2 class="section-title" style="color: white;">Let's Connect</h2>
-                    <p style="margin-bottom: 2rem; opacity: 0.7;">Ready to bring data-driven insights to your team?</p>
-                    <p style="margin-bottom: 10px;">📧 bhumitbhanushali15@gmail.com</p>
-                    <p style="margin-bottom: 10px;">📱 +91 99747 92010</p>
-                </div>
-                <form action="https://formspree.io/f/xdapgazl" method="POST" class="contact-form">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
-                    <button type="submit" class="btn-send">Send Message</button>
-                </form>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                    I am currently looking for new opportunities in Data Science and AI Analytics. My inbox is always open for collaborations!
+                </p>
+                <p>📧 <a href="mailto:bhumitbhanushali15@gmail.com" style="color: var(--accent); text-decoration: none;">bhumitbhanushali15@gmail.com</a></p>
+                <p style="margin: 1rem 0;">📱 +91 99747 92010</p>
+                <p>💼 <a href="https://www.linkedin.com/in/bhumit-bhanushali-96b42b26b" target="_blank" style="color: var(--accent); text-decoration: none;">LinkedIn Profile</a></p>
             </div>
+
+            <form action="https://formspree.io/f/xdapgazl" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </section>
 
-    <footer style="background: #060d16; padding: 2rem; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.8rem;">
-        <p>© 2026 Bhumit Bhanushali · Mumbai, India</p>
+    <footer style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem; font-family: monospace;">
+        <p>Built by Bhumit Bhanushali &copy; 2026</p>
     </footer>
 
 </body>
