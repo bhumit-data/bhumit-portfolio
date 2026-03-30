@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Bhumit Bhanushali | Data Analyst & Gen AI Specialist</title>
+    <title>Bhumit Bhanushali | Data Analyst Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
     <style>
         :root {
             --navy: #0a192f;
             --navy-light: #112240;
-            --blue: #2563eb;
             --accent: #f59e0b;
             --white: #ffffff;
             --text-main: #e6f1ff;
@@ -36,8 +35,15 @@
         .hero-name span { color: var(--accent); }
         .hero-sub { color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
 
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 4px; font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; cursor: pointer; display: inline-block; }
+        .btn-primary { background: var(--accent); color: var(--navy); border: none; }
+        .btn-primary:hover { background: #d98e06; transform: translateY(-3px); }
+        .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+        .btn-outline:hover { background: rgba(245, 158, 11, 0.1); transform: translateY(-3px); }
+
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .card { background: var(--navy-light); padding: 2.5rem; border-radius: 8px; border: 1px solid transparent; transition: 0.3s; }
+        .card { background: var(--navy-light); padding: 2.5rem; border-radius: 8px; border: 1px solid transparent; transition: 0.3s; position: relative; }
         .card:hover { transform: translateY(-10px); border-color: var(--accent); }
         .card h3 { color: var(--white); margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
         .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
@@ -46,10 +52,8 @@
         .form-group { margin-bottom: 1.5rem; }
         input, textarea { width: 100%; background: #112240; border: 1px solid #233554; padding: 15px; color: white; border-radius: 4px; outline: none; font-family: inherit; }
         input:focus, textarea:focus { border-color: var(--accent); }
-        .submit-btn { width: 100%; padding: 15px; background: var(--accent); color: var(--navy); font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; border-radius: 4px; transition: 0.3s; }
-        .submit-btn:hover { background: #d98e06; transform: scale(1.02); }
-
-        .contact-link { color: var(--accent); text-decoration: none; display: block; margin-bottom: 1rem; font-weight: 500; transition: 0.3s; }
+        
+        .contact-link { color: var(--accent); text-decoration: none; display: block; margin-bottom: 1rem; font-weight: 500; font-size: 1.1rem; }
         .contact-link:hover { color: var(--white); }
 
         @media (max-width: 768px) { .nav-links { display: none; } .contact-container { grid-template-columns: 1fr; } }
@@ -71,8 +75,11 @@
         <div class="hero-content">
             <p style="color: var(--accent); font-family: monospace; margin-bottom: 1rem; letter-spacing: 2px;">DATA ANALYST & GEN AI SPECIALIST</p>
             <h1 class="hero-name">Bhumit Bhanushali<span>.</span></h1>
-            <p class="hero-sub">I specialize in Python, SQL, and Power BI to transform complex datasets into intelligent, actionable business insights.</p>
-            <a href="#contact" class="submit-btn" style="text-decoration: none; padding: 14px 30px; display: inline-block; width: auto;">Hire Me</a>
+            <p class="hero-sub">Specializing in Python, SQL, Power BI, and Generative AI to bridge the gap between complex data and intelligent business decisions.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Hire Me</a>
+                <a href="Bhumit_Bhanushali_Resume.docx" download class="btn btn-outline">Download Resume</a>
+            </div>
         </div>
     </section>
 
@@ -82,13 +89,13 @@
             <div class="card">
                 <h3 style="color: var(--accent);">BBA in Human Resources</h3>
                 <p style="color: var(--white); font-weight: 600;">Parul University (2025)</p>
-                <p>Core focus on Business Analytics, Statistics, Data Management, and Research Methodology.</p>
+                <p>Focused on Business Analytics, Statistics, Data Management, and Research Methodology.</p>
             </div>
             <div class="card">
                 <h3 style="color: var(--accent);">Technical Toolbox</h3>
-                <p>Programming: Python, SQL</p>
-                <p>Visualization: Power BI, Tableau</p>
-                <p>Analytics: EDA, Data Cleaning, KPI Reporting, Excel</p>
+                <p><strong>Languages:</strong> Python, SQL</p>
+                <p><strong>BI Tools:</strong> Power BI, Tableau</p>
+                <p><strong>Analytical:</strong> ETL, EDA, Data Cleaning, KPI Reporting, Excel</p>
             </div>
         </div>
     </section>
@@ -98,37 +105,37 @@
         <div class="grid">
             <div class="card">
                 <h3 style="color: var(--accent);">Multi-Platform Engagement Analysis</h3>
-                <p>Analyzed social metrics across Instagram and Snapchat, visualizing 14M Total Reach and 20M Impressions with a 12.0% Engagement Rate.</p>
-                <p style="font-family: monospace; font-size: 0.8rem; color: var(--accent);">Tools: Power BI, Analytics Dashboard</p>
+                <p>Analyzed social metrics for Q1 2026, visualizing 14M Total Reach and 20M Impressions with a 12.0% Engagement Rate across platforms.</p>
+                <p style="font-family: monospace; font-size: 0.8rem; color: var(--accent);">Power BI | Dashboard Design</p>
             </div>
             <div class="card">
                 <h3 style="color: var(--accent);">Customer Analytics Dashboard</h3>
-                <p>Built a Power BI solution to monitor customer health, revenue trends, and churn patterns with 99.9% data reliability.</p>
-                <p style="font-family: monospace; font-size: 0.8rem; color: var(--accent);">Tools: Python, SQL, Power BI</p>
+                <p>Built a Power BI solution to monitor revenue trends and churn patterns, delivering actionable insights for targeted retention strategies.</p>
+                <p style="font-family: monospace; font-size: 0.8rem; color: var(--accent);">Python | SQL | Power BI</p>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <h2 class="section-title">Work History</h2>
+        <h2 class="section-title">Work Experience</h2>
         <div class="card">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                 <h3 style="margin-bottom: 0;">Data Analyst Intern</h3>
                 <span style="color: var(--accent); font-weight: 600;">Dec 2025 – Mar 2026</span>
             </div>
-            <p style="color: var(--white); margin-top: 5px;">Adbizit</p>
-            <p>Improved data reliability through structured cleaning processes and developed dashboards to surface actionable insights for stakeholders.</p>
+            <p style="color: var(--white); margin-top: 5px;">Adbizit (3 Months)</p>
+            <p>Improved data reliability through structured cleaning and developed Power BI dashboards to surface actionable insights for stakeholders.</p>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Let's Work Together</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">I am currently seeking opportunities in Data Science and AI-driven Analytics. Let's discuss how I can help your team.</p>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Seeking opportunities in Data Science and AI-driven Analytics. Let's discuss how I can add value to your team.</p>
                 
                 <a href="mailto:bhumitbhanushali15@gmail.com" class="contact-link">📧 bhumitbhanushali15@gmail.com</a>
-                <p style="margin-bottom: 1rem; color: var(--accent);">📱 +91 99747 92010</p>
+                <p style="margin-bottom: 1rem; color: var(--accent); font-size: 1.1rem;">📱 +91 99747 92010</p>
                 <a href="https://www.linkedin.com/in/bhumit-bhanushali-96b42b26b" target="_blank" class="contact-link">💼 LinkedIn Profile</a>
                 <a href="https://github.com" target="_blank" class="contact-link">🐙 GitHub Portfolio</a>
             </div>
@@ -143,7 +150,7 @@
                 <div class="form-group">
                     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message →</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message →</button>
             </form>
         </div>
     </section>
