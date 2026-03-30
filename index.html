@@ -1,57 +1,405 @@
-<!-- Replace the existing sections in your code with these updated versions -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bhumit Bhanushali — Data Analyst & Gen AI Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --navy: #0d1b2a;
+            --navy2: #1b2e45;
+            --blue: #1a56db;
+            --blue2: #2563eb;
+            --accent: #f0a500;
+            --light: #e8eef6;
+            --muted: #64748b;
+            --white: #ffffff;
+            --card: #ffffff;
+            --border: #dde4ef;
+            --text: #1e293b;
+        }
 
-<!-- 1. UPDATED HERO SUBTITLE -->
-<p class="hero-sub">Data Analyst skilled in Python, SQL, Power BI & Generative AI — turning raw data into clear, actionable business insights.</p>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background: #f4f7fb; color: var(--text); line-height: 1.6; }
 
-<!-- 2. UPDATED ABOUT TEXT -->
-<div class="about-text">
-    <p class="section-label">About Me</p>
-    <h2 class="section-title">Aspiring Data Analyst with a Passion for Insight</h2>
-    <div class="section-divider"></div>
-    <p>I'm Bhumit Bhanushali, an aspiring Data Analyst based in Mumbai. With hands-on experience at Adbizit, I specialize in transforming complex datasets into meaningful, decision-driving insights.</p>
-    <p>My toolkit spans Python, SQL, Power BI, and Tableau. <strong>I also leverage Generative AI and Prompt Engineering</strong> to enhance data cleaning, automate reporting, and surface deeper trends more efficiently.</p>
-    <!-- ... rest of about info ... -->
-</div>
+        /* ── NAVBAR ─────────────────────────────────────────────────────── */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13, 27, 42, 0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; }
+        .nav-logo { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.3rem; font-weight: 700; letter-spacing: 0.02em; text-decoration: none; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
 
-<!-- 3. UPDATED SKILLS GRID (Added AI Card) -->
-<div class="skills-grid">
-    <div class="skill-card reveal">
-        <div class="skill-card-icon">🐍</div>
-        <h4>Programming</h4>
-        <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
+        /* ── HERO ────────────────────────────────────────────────────────── */
+        #hero { min-height: 100vh; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1e3a5f 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 5% 60px; position: relative; overflow: hidden; }
+        #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(26,86,219,0.18) 0%, transparent 70%), radial-gradient(circle at 80% 20%, rgba(240,165,0,0.08) 0%, transparent 50%); }
+        .hero-grid { position: absolute; inset: 0; opacity: 0.04; background-image: linear-gradient(var(--white) 1px, transparent 1px), linear-gradient(90deg, var(--white) 1px, transparent 1px); background-size: 48px 48px; }
+        .hero-content { position: relative; z-index: 1; max-width: 850px; }
+        .hero-tag { display: inline-block; background: rgba(240,165,0,0.15); border: 1px solid rgba(240,165,0,0.4); color: var(--accent); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 18px; border-radius: 999px; margin-bottom: 1.5rem; animation: fadeUp 0.6s ease both; }
+        .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 700; color: var(--white); line-height: 1.08; margin-bottom: 1rem; animation: fadeUp 0.7s 0.1s ease both; }
+        .hero-name span { color: var(--accent); }
+        .hero-sub { font-size: 1.25rem; color: rgba(255,255,255,0.75); font-weight: 400; max-width: 650px; margin: 0 auto 2.5rem; animation: fadeUp 0.7s 0.2s ease both; }
+        .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s 0.3s ease both; }
+        .btn-primary { background: var(--blue2); color: var(--white); padding: 13px 32px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; letter-spacing: 0.02em; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; }
+        .btn-primary:hover { background: var(--blue); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); padding: 13px 32px; border-radius: 6px; font-weight: 500; font-size: 0.9rem; text-decoration: none; letter-spacing: 0.02em; transition: border-color 0.2s, transform 0.15s; }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 4rem; animation: fadeUp 0.7s 0.4s ease both; }
+        .stat { text-align: center; }
+        .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--accent); }
+        .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; text-transform: uppercase; }
+
+        /* ── SECTIONS ────────────────────────────────────────────────────── */
+        section { padding: 90px 5%; }
+        .section-inner { max-width: 1060px; margin: 0 auto; }
+        .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue2); margin-bottom: 0.5rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
+        .section-divider { width: 48px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 3rem; }
+
+        /* ── ABOUT ───────────────────────────────────────────────────────── */
+        #about { background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .about-img-box { width: 100%; aspect-ratio: 4/5; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .about-img-box::after { content: 'BB'; position: absolute; font-size: 7rem; font-family: 'Playfair Display', serif; font-weight: 700; color: rgba(255,255,255,0.06); bottom: -10px; right: -10px; line-height: 1; }
+        .about-initials { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: 0.04em; }
+        .about-text p { color: var(--muted); font-size: 1.02rem; margin-bottom: 1.2rem; line-height: 1.8; }
+        .about-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+        .about-info-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); font-weight: 600; }
+        .about-info-value { font-size: 0.95rem; color: var(--text); font-weight: 500; margin-top: 2px; }
+
+        /* ── SKILLS ──────────────────────────────────────────────────────── */
+        #skills { background: #f4f7fb; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .skill-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; transition: all 0.2s; }
+        .skill-card:hover { box-shadow: 0 8px 32px rgba(13,27,42,0.1); transform: translateY(-3px); border-color: var(--blue2); }
+        .skill-card-icon { width: 44px; height: 44px; border-radius: 8px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; }
+        .skill-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .skill-tag { background: var(--light); color: var(--navy2); font-size: 0.75rem; font-weight: 500; padding: 3px 10px; border-radius: 999px; }
+
+        /* ── PROJECTS ────────────────────────────────────────────────────── */
+        #projects { background: var(--white); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); transition: all 0.2s; }
+        .project-card:hover { box-shadow: 0 12px 40px rgba(13,27,42,0.12); transform: translateY(-4px); }
+        .project-top { padding: 2rem; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); position: relative; }
+        .project-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); }
+        .project-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+        .project-tool { background: rgba(240,165,0,0.18); border: 1px solid rgba(240,165,0,0.35); color: var(--accent); font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+        .project-body { padding: 1.5rem 2rem 2rem; }
+        .project-section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--blue2); margin: 1rem 0 0.5rem; }
+        .project-body ul { list-style: none; }
+        .project-body ul li { font-size: 0.88rem; color: var(--muted); padding: 4px 0 4px 16px; position: relative; }
+        .project-body ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+        /* ── WORK EXPERIENCE ─────────────────────────────────────────────── */
+        #experience { background: #f4f7fb; }
+        .timeline { position: relative; padding-left: 32px; }
+        .timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline-dot { position: absolute; left: -32px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--blue2); border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--blue2); }
+        .timeline-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; }
+        .timeline-header { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.8rem; }
+        .timeline-role { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+        .timeline-company { font-size: 0.88rem; color: var(--blue2); font-weight: 600; }
+        .timeline-period { background: var(--light); color: var(--muted); font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; }
+        .timeline-card ul { list-style: none; margin-top: 0.8rem; }
+        .timeline-card ul li { font-size: 0.9rem; color: var(--muted); padding: 4px 0 4px 18px; position: relative; }
+        .timeline-card ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 7px; height: 7px; border-radius: 50%; background: var(--blue2); }
+
+        /* ── CERTIFICATIONS ──────────────────────────────────────────────── */
+        .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .cert-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.6rem; display: flex; gap: 1.2rem; background: var(--white); transition: all 0.2s; }
+        .cert-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .cert-icon { width: 44px; height: 44px; border-radius: 8px; flex-shrink: 0; background: linear-gradient(135deg, var(--blue2), var(--navy)); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .cert-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+        .cert-issuer { font-size: 0.8rem; color: var(--muted); }
+        .cert-year { display: inline-block; margin-top: 8px; background: var(--light); color: var(--blue2); font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+
+        /* ── EDUCATION ───────────────────────────────────────────────────── */
+        .edu-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; display: flex; gap: 2rem; max-width: 750px; }
+        .edu-year-badge { background: var(--navy); color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; padding: 1rem; border-radius: 8px; text-align: center; min-width: 80px; }
+        .edu-degree { font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+        .edu-uni { color: var(--blue2); font-weight: 600; margin-bottom: 0.5rem; }
+
+        /* ── CONTACT ─────────────────────────────────────────────────────── */
+        #contact { background: var(--navy); color: white; padding: 90px 5%; }
+        #contact .section-title { color: white; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+        .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
+        .contact-item { display: flex; align-items: center; gap: 1rem; }
+        .contact-item-icon { width: 44px; height: 44px; border-radius: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; }
+        .contact-item-value a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        
+        .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+        .form-group input, .form-group textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 12px; color: white; outline: none; }
+        .btn-send { background: var(--accent); color: var(--navy); font-weight: 700; padding: 14px 32px; border-radius: 6px; border: none; cursor: pointer; text-transform: uppercase; }
+
+        footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); text-align: center; padding: 2rem; font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { opacity: 0; transform: translateY(28px); transition: all 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .edu-card { flex-direction: column; }
+            .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a class="nav-logo" href="#hero">Bhumit <span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-tag">Data Analyst & Gen AI Specialist</div>
+            <h1 class="hero-name">Bhumit<br/><span>Bhanushali</span></h1>
+            <p class="hero-sub">Specializing in Python, SQL, Power BI, and <strong>Generative AI</strong> to bridge the gap between complex data and intelligent business decisions.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-outline">Download Resume</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><div class="stat-num">1</div><div class="stat-label">Project</div></div>
+                <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Months Exp.</div></div>
+                <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Tools Mastered</div></div>
+                <div class="stat"><div class="stat-num">3</div><div class="stat-label">Certifications</div></div>
+            </div>
         </div>
-    </div>
-    
-    <!-- NEW AI CARD -->
-    <div class="skill-card reveal">
-        <div class="skill-card-icon">🤖</div>
-        <h4>AI & Automation</h4>
-        <div class="skill-tags">
-            <span class="skill-tag">Generative AI</span>
-            <span class="skill-tag">Prompt Engineering</span>
-            <span class="skill-tag">AI Workflows</span>
-        </div>
-    </div>
+    </section>
 
-    <div class="skill-card reveal">
-        <div class="skill-card-icon">🗄️</div>
-        <h4>Databases</h4>
-        <div class="skill-tags">
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">MySQL</span>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-inner">
+            <div class="about-grid reveal">
+                <div class="about-img-box"><span class="about-initials">BB</span></div>
+                <div class="about-text">
+                    <p class="section-label">Profile</p>
+                    <h2 class="section-title">Data Professional with an AI Edge</h2>
+                    <div class="section-divider"></div>
+                    <p>I'm Bhumit Bhanushali, a Mumbai-based Data Analyst. Beyond traditional analytics, I focus on <strong>Generative AI integration</strong>, using modern AI tools to streamline data cleaning, automate workflows, and enhance business reporting.</p>
+                    <p>With an internship background at Adbizit, I focus on turning "noisy" data into high-fidelity dashboards that tell a compelling story.</p>
+                    <div class="about-info">
+                        <div class="about-info-item"><div class="about-info-label">Email</div><div class="about-info-value">bhumitbhanushali15@gmail.com</div></div>
+                        <div class="about-info-item"><div class="about-info-label">Location</div><div class="about-info-value">Mumbai, Maharashtra</div></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="skill-card reveal">
-        <div class="skill-card-icon">📊</div>
-        <h4>Data Tools</h4>
-        <div class="skill-tags">
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">Excel</span>
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-inner">
+            <p class="section-label reveal">Tech Stack</p>
+            <h2 class="section-title reveal">Skills & Expertise</h2>
+            <div class="section-divider reveal"></div>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-card-icon">🤖</div>
+                    <h4>Generative AI</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LLM Integration</span>
+                        <span class="skill-tag">AI Workflows</span>
+                        <span class="skill-tag">Automated reporting</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-icon">🐍</div>
+                    <h4>Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">EDA</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-icon">📊</div>
+                    <h4>Visualization</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Excel</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-icon">🗄️</div>
+                    <h4>Databases</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Data Modeling</span>
+                        <span class="skill-tag">ETL</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-inner">
+            <p class="section-label reveal">Portfolio</p>
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="section-divider reveal"></div>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-top">
+                        <div class="project-tools">
+                            <span class="project-tool">Python</span>
+                            <span class="project-tool">SQL</span>
+                            <span class="project-tool">Power BI</span>
+                        </div>
+                        <h3 class="project-title">Customer Analytics Dashboard</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-section-label">Overview</div>
+                        <ul>
+                            <li>Built a comprehensive Power BI dashboard analyzing revenue trends and churn.</li>
+                            <li>Identified high-risk customer segments to improve retention strategies.</li>
+                            <li>Applied automated data cleaning to ensure 99% data reliability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section id="experience">
+        <div class="section-inner">
+            <p class="section-label reveal">Experience</p>
+            <h2 class="section-title reveal">Work History</h2>
+            <div class="section-divider reveal"></div>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-role">Data Analyst Intern</div>
+                                <div class="timeline-company">Adbizit</div>
+                            </div>
+                            <div class="timeline-period">Dec 2025 – Mar 2026</div>
+                        </div>
+                        <ul>
+                            <li>Improved dataset quality via structured validation processes.</li>
+                            <li>Developed dashboards tracking key business metrics and engagement.</li>
+                            <li>Utilized EDA to surface trends for stakeholders.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <div class="section-inner">
+            <p class="section-label reveal">Learning</p>
+            <h2 class="section-title reveal">Certifications</h2>
+            <div class="section-divider reveal"></div>
+            <div class="certs-grid">
+                <div class="cert-card reveal">
+                    <div class="cert-icon">🏢</div>
+                    <div>
+                        <div class="cert-name">Data Analytics & Gen AI</div>
+                        <div class="cert-issuer">Deloitte & Tata (Forage)</div>
+                        <span class="cert-year">2025</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon">🎓</div>
+                    <div>
+                        <div class="cert-name">Data Analyst Pro Course</div>
+                        <div class="cert-issuer">Digifine Academy</div>
+                        <span class="cert-year">2025</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon">🤖</div>
+                    <div>
+                        <div class="cert-name">AI Tool Workshop</div>
+                        <div class="cert-issuer">be10x</div>
+                        <span class="cert-year">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="section-inner">
+            <p class="section-label reveal">Background</p>
+            <h2 class="section-title reveal">Education</h2>
+            <div class="section-divider reveal"></div>
+            <div class="edu-card reveal">
+                <div class="edu-year-badge">2025</div>
+                <div>
+                    <div class="edu-degree">BBA in Human Resources</div>
+                    <div class="edu-uni">Parul University</div>
+                    <p style="font-size: 0.85rem; color: #64748b;"><strong>Core:</strong> Business Analytics, Statistics, Data Management, Operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-inner">
+            <div class="contact-grid">
+                <div>
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 2rem;">Seeking opportunities in Data Science and AI-driven Analytics.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">📧 <a href="mailto:bhumitbhanushali15@gmail.com">bhumitbhanushali15@gmail.com</a></div>
+                        <div class="contact-item">📱 +91 99747 92010</div>
+                        <div class="contact-item">💼 <a href="#">LinkedIn</a></div>
+                        <div class="contact-item">🐙 <a href="#">GitHub</a></div>
+                    </div>
+                </div>
+                <div class="contact-form reveal">
+                    <div class="form-group"><input type="text" placeholder="Name"/></div>
+                    <div class="form-group"><input type="email" placeholder="Email"/></div>
+                    <div class="form-group"><textarea rows="4" placeholder="Message"></textarea></div>
+                    <button class="btn-send">Send Message →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 <span>Bhumit Bhanushali</span> · Built with Data & AI · Mumbai, India</p>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
